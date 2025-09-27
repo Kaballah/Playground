@@ -1,0 +1,104 @@
+[
+  {
+    "id": "moto-x3m",
+    "title": "Moto X3M Pool Party",
+    "description": "Extreme motorcycle racing with pool party theme and challenging obstacles",
+    "tags": ["single-player", "action", "racing"],
+    "status": "playable",
+    "path": "https://playground.kaballah.site/game/moto-x3m",
+    "icon": "🏍️",
+    "iframe": "<iframe src=\"http://www.freeonlinegames.com/embed/145570\" width=\"640\" height=\"427\" frameborder=\"no\" scrolling=\"no\"></iframe>"
+  },
+  {
+    "id": "bubble-shooter",
+    "title": "Bubble Shooter Extreme",
+    "description": "Classic bubble shooting game with extreme challenges and power-ups",
+    "tags": ["single-player", "puzzle", "casual"],
+    "status": "playable",
+    "path": "#",
+    "icon": "🫧",
+    "iframe": "<iframe src=\"http://www.freeonlinegames.com/embed/144939\" width=\"900\" height=\"675\" frameborder=\"no\" scrolling=\"no\"></iframe>"
+  },
+  {
+    "id": "battle-area",
+    "title": "Battle Area HTML5",
+    "description": "Intense multiplayer battle arena game with strategic combat",
+    "tags": ["multiplayer", "action", "strategy"],
+    "status": "playable",
+    "path": "https://playground.kaballah.site/game/battle-area",
+    "icon": "⚔️",
+    "iframe": "<iframe src=\"http://www.freeonlinegames.com/embed/160243\" width=\"800\" height=\"450\" frameborder=\"no\" scrolling=\"no\"></iframe>"
+  },
+  {
+    "id": "chess",
+    "title": "Chess",
+    "description": "Classic two-player strategy game with full rule implementation",
+    "tags": ["multiplayer", "turn-based", "strategy"],
+    "status": "in-development",
+    "path": "",
+    "icon": "♔"
+  },
+  {
+    "id": "solitaire",
+    "title": "Klondike Solitaire",
+    "description": "The classic single-player card game everyone knows",
+    "tags": ["single-player", "cards"],
+    "status": "in-development",
+    "path": "/games/solitaire/",
+    "icon": "🃏"
+  },
+  {
+    "id": "poker",
+    "title": "Texas Hold'em",
+    "description": "Multiplayer poker with real-time gameplay and chat",
+    "tags": ["multiplayer", "cards", "real-time"],
+    "status": "in-development",
+    "path": "/games/poker/",
+    "icon": "🂡"
+  },
+  {
+    "id": "checkers",
+    "title": "Checkers",
+    "description": "Classic board game for two players",
+    "tags": ["multiplayer", "turn-based", "strategy"],
+    "status": "in-development",
+    "path": "/games/checkers/",
+    "icon": "⚫"
+  },
+  {
+    "id": "blackjack",
+    "title": "Blackjack",
+    "description": "Beat the dealer to 21 in this casino classic",
+    "tags": ["single-player", "cards"],
+    "status": "in-development",
+    "path": "/games/blackjack/",
+    "icon": "🂫"
+  },
+  {
+    "id": "battleship",
+    "title": "Battleship",
+    "description": "Sink your opponent's fleet in this naval strategy game",
+    "tags": ["multiplayer", "turn-based", "strategy"],
+    "status": "in-development",
+    "path": "/games/battleship/",
+    "icon": "🚢"
+  },
+  {
+    "id": "hearts",
+    "title": "Hearts",
+    "description": "Four-player trick-taking card game",
+    "tags": ["multiplayer", "cards", "turn-based"],
+    "status": "in-development",
+    "path": "/games/hearts/",
+    "icon": "♥️"
+  },
+  {
+    "id": "minesweeper",
+    "title": "Minesweeper",
+    "description": "Clear the minefield without detonating any mines",
+    "tags": ["single-player", "puzzle"],
+    "status": "in-development",
+    "path": "/games/minesweeper/",
+    "icon": "💣"
+  }
+]

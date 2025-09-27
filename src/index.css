@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode setup */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@font-face {
+  font-family: 'Qurova';
+  src: url('/src/font/qurova-demo/QurovaDEMO-Regular.otf') format('opentype');
+}
+
+/* Custom styles */
+.filter-btn {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 border border-transparent transition-colors duration-200;
+}
+
+.filter-btn.active {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.game-tile {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+}
+
+.game-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .game-tile:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+}
+
+/* Smooth transitions for filtering */
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hero section styling */
+.hero-section {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Typing animation */
+.typing-animation {
+    border-right: 2px solid;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: currentColor; }
+}
+
+/* ...existing code... */
+.icon-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 24s linear infinite;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Hero text outline effect */
+.hero-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #1f2937;
+    text-stroke: 1px #1f2937;
+    filter: blur(0);
+}
+
+.dark .hero-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    filter: blur(0);
+}
+
+.hero-outline-2 {
+    color: #1f2937;
+}
+
+.dark .hero-outline-2 {
+    color: #fff;
+}
+/* ...existing code... */
+
+/* Back to top button animations */
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: translateY(-2px);
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Game iframe container */
+.game-iframe-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.game-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Modal animations */
+#username-modal {
+    backdrop-filter: blur(4px);
+}
+
+#username-modal > div {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Theme transition */
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Game status colors */
+.status-playable {
+    @apply bg-green-500;
+}
+
+.status-in-development {
+    @apply bg-yellow-500;
+}
+
+.status-unavailable {
+    @apply bg-red-500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.125rem;
+    }
+}
