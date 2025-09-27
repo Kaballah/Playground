@@ -125,6 +125,7 @@ class GameHub {
             {
                 id: 'moto-x3m',
                 title: 'Moto X3M Pool Party',
+                class: 'block',
                 description: 'Extreme motorcycle racing with pool party theme',
                 tags: ['single-player', 'action', 'racing'],
                 status: 'playable',
@@ -135,6 +136,7 @@ class GameHub {
             {
                 id: 'bubble-shooter',
                 title: 'Bubble Shooter Extreme',
+                class: 'block',
                 description: 'Classic bubble shooting game with extreme challenges',
                 tags: ['single-player', 'puzzle', 'casual'],
                 status: 'playable',
@@ -145,6 +147,7 @@ class GameHub {
             {
                 id: 'battle-area',
                 title: 'Battle Area HTML5',
+                class: 'block',
                 description: 'Intense multiplayer battle arena game',
                 tags: ['multiplayer', 'action', 'strategy'],
                 status: 'playable',
@@ -155,6 +158,7 @@ class GameHub {
             {
                 id: 'chess',
                 title: 'Chess',
+                class: 'block',
                 description: 'Classic two-player strategy game',
                 tags: ['multiplayer', 'turn-based', 'strategy'],
                 status: 'in-development',
@@ -164,6 +168,7 @@ class GameHub {
             {
                 id: 'solitaire',
                 title: 'Klondike Solitaire',
+                class: 'block',
                 description: 'The classic single-player card game',
                 tags: ['single-player', 'cards'],
                 status: 'in-development',
@@ -173,6 +178,7 @@ class GameHub {
             {
                 id: 'poker',
                 title: 'Texas Hold\'em',
+                class: 'block',
                 description: 'Multiplayer poker with real-time gameplay',
                 tags: ['multiplayer', 'cards', 'real-time'],
                 status: 'in-development',
@@ -182,6 +188,7 @@ class GameHub {
             {
                 id: 'checkers',
                 title: 'Checkers',
+                class: 'block',
                 description: 'Classic board game for two players',
                 tags: ['multiplayer', 'turn-based', 'strategy'],
                 status: 'in-development',
@@ -191,6 +198,7 @@ class GameHub {
             {
                 id: 'blackjack',
                 title: 'Blackjack',
+                class: 'block',
                 description: 'Beat the dealer to 21',
                 tags: ['single-player', 'cards'],
                 status: 'in-development',
@@ -212,7 +220,7 @@ class GameHub {
         this.hideEmptyState();
 
         grid.innerHTML = filteredGames.map(game => `
-            <article class="game-tile rounded-lg shadow-sm border p-6 transition-all duration-200" 
+            <article class="game-tile block rounded-lg shadow-sm border p-6 transition-all duration-200" 
                      data-game-id="${game.id}" data-tags="${game.tags.join(' ')}">
                 <div class="flex items-start justify-between mb-4">
                     <div class="flex items-center space-x-3">
