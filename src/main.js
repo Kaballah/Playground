@@ -131,7 +131,7 @@ class GameHub {
                 status: 'playable',
                 path: '#',
                 icon: '🏍️',
-                iframe: '<iframe src="http://www.freeonlinegames.com/embed/145570" width="640" height="427" frameborder="no" scrolling="no"></iframe>'
+                iframe: "<iframe src='http://www.freeonlinegames.com/embed/145570' width='640' height='427' frameborder='no' scrolling='no></iframe>"
             },
             {
                 id: 'bubble-shooter',
@@ -211,6 +211,56 @@ class GameHub {
     renderGames() {
         const grid = document.getElementById('game-grid');
         const filteredGames = this.filterGames();
+        
+        // Store favorite game IDs in localStorage
+        function getFavorites() {
+            return JSON.parse(localStorage.getItem('favorites') || '[]');
+        }
+        function setFavorites(favs) {
+            localStorage.setItem('favorites', JSON.stringify(favs));
+        }
+
+        // Toggle favorite on star click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.favorite-star')) {
+                const btn = e.target.closest('.favorite-star');
+                const gameTile = btn.closest('.game-tile');
+                const gameId = gameTile.dataset.gameId;
+                let favs = getFavorites();
+                if (favs.includes(gameId)) {
+                    favs = favs.filter(id => id !== gameId);
+                    btn.classList.remove('favorited');
+                } else {
+                    favs.push(gameId);
+                    btn.classList.add('favorited');
+                }
+                setFavorites(favs);
+            }
+        });
+
+        // Highlight favorited stars on render
+        function highlightFavorites() {
+            const favs = getFavorites();
+            document.querySelectorAll('.game-tile').forEach(tile => {
+                const btn = tile.querySelector('.favorite-star');
+                if (!btn) return;
+                const gameId = tile.dataset.gameId;
+                if (favs.includes(gameId)) {
+                    btn.classList.add('favorited');
+                } else {
+                    btn.classList.remove('favorited');
+                }
+            });
+        }
+
+        // Filter by favorites
+        document.getElementById('favorite-filter-btn').addEventListener('click', function() {
+            const favs = getFavorites();
+            document.querySelectorAll('.game-tile').forEach(tile => {
+                const gameId = tile.dataset.gameId;
+                tile.style.display = favs.includes(gameId) ? '' : 'none';
+            });
+        });
 
         if (filteredGames.length === 0) {
             this.showEmptyState();
@@ -238,6 +288,12 @@ class GameHub {
                     </div>
                 </div>
 
+                <button class="favorite-star absolute top-2 right-2 z-20" aria-label="Favorite">
+                    <svg class="w-6 h-6 text-yellow-400 fill-none stroke-current transition-colors duration-200" viewBox="0 0 24 24">
+                        <path d="M12 17.75l-6.172 3.245 1.179-6.873L2 9.885l6.914-1.004L12 2.5l3.086 6.381L22 9.885l-5.007 4.237 1.179 6.873z" stroke-width="2"/>
+                    </svg>
+                </button>
+
                 <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">${game.description}</p>
 
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -248,14 +304,14 @@ class GameHub {
                     `).join('')}
                 </div>
 
-                <button class="play-btn w-full py-2 px-4 rounded-md font-medium transition-all duration-200 ${this.getPlayButtonClass(game.status)}"
-                        data-path="${game.path}" data-status="${game.status}" data-iframe="${game.iframe || ''}">
-                    ${this.getPlayButtonText(game.status)}
-                </button>
+                <button class="play-btn w-full py-2 px-4 rounded-md font-medium transition-all duration-200 ${this.getPlayButtonClass(game.status)}" data-path="${game.path}" data-status="${game.status}" data-iframe="${game.iframe || ''}">
+    ${this.getPlayButtonText(game.status)}
+</button>
             </article>
         `).join('');
 
         this.attachPlayListeners();
+        highlightFavorites();
     }
 
     filterGames() {
@@ -379,7 +435,7 @@ class GameHub {
                                     <h1>Kaballah's Playground</h1>
                                 </div>
                                 <div class="game-content">
-                                    ${iframe}
+                                    ${game.iframe || `<iframe class="game-frame" src="` + path + `" allowfullscreen></iframe>`}
                                 </div>
                             </div>
                         </body>

@@ -110,6 +110,29 @@
     color: #fff;
 }
 
+.filter {
+    border-bottom: 2px dashed #1f2937;
+}
+
+.dark .filter {
+    border-bottom: 2px dashed #fff;
+}
+
+.favorite-star {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: transform 0.1s;
+}
+.favorite-star:hover {
+    transform: scale(1.2);
+}
+.favorite-star.favorited svg {
+    fill: #facc15;
+    stroke: #facc15;
+}
+
 @keyframes appear {
     from {
         opacity: 0;
@@ -122,7 +145,7 @@
 }
 
 .block {
-    animation: appear 0.5s linear;
+    animation: appear 0.3s linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
 }

@@ -6,7 +6,7 @@
     <title>Playground - Portfolio Game Hub</title>
     <link href="./src/index.css" rel="stylesheet">
 </head>
-<body class="transition-colors duration-300">
+<body class="transition-colors duration-300 bg-gray-50 dark:bg-gray-800">
     <!-- Username Modal -->
     <div id="username-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
         <div class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4 shadow-xl">
@@ -104,8 +104,10 @@
         </div>
     </section>
 
+    <hr>
+
     <!-- Filter Controls -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <section class="filter sticky top-16 transition-colors duration-300 bg-gray-50 dark:bg-gray-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8" style="z-index: 10;">
         <div class="flex flex-wrap gap-2 mb-8">
             <button id="filter-all" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">
                 All Games
@@ -125,8 +127,17 @@
             <button id="filter-action" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">
                 Action
             </button>
+            
+            <button id="favorite-filter-btn" class="flex items-center px-4 py-2 rounded-full text-sm font-medium bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 hover:bg-yellow-200 dark:hover:bg-yellow-800 transition-all duration-200">
+                <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                </svg>
+                Favorites
+            </button>
         </div>
     </section>
+
+    <br>
 
     <!-- Game Grid -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -160,7 +171,7 @@
                 <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-0">
                     © 2025 Built by Kaballah
                 </p>
-                <a href="https://github.com/kaballah/games" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/kaballah/playground" target="_blank" rel="noopener noreferrer"
                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200">
                     View Source Code
                 </a>
