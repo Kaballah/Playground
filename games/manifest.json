@@ -10,24 +10,23 @@
     "iframe": "<iframe id='embededGame' src='https://idev.games/embed/multi-bomb' scrolling='no' seamless='seamless' frameBorder='0' style='position: absolute;top:0;left: 0;width: 100%;height: 100%;'>Browser not compatible.</iframe>"
   },
   {
-    "id": "bubble-shooter",
-    "title": "Bubble Shooter Extreme",
+    "id": "minimal-tower-defense",
+    "title": "Minimal Tower Defense",
     "description": "Classic bubble shooting game with extreme challenges and power-ups",
     "tags": ["single-player", "puzzle", "casual"],
     "status": "playable",
-    "path": "#",
+    "path": "/games/minimal-tower-defense.html",
     "icon": "🫧",
-    "iframe": "<iframe src='http://www.freeonlinegames.com/embed/144939' width='900' height='675' frameborder='no' scrolling='no'></iframe>"
+    "iframe": "<iframe id='embededGame' src='https://idev.games/embed/minimal-tower-defense' scrolling='no' seamless='seamless' frameBorder='0' style='position: absolute;top:0;left: 0;width: 100%;height: 100%;'>Browser not compatible.</iframe>"
   },
   {
-    "id": "battle-area",
-    "title": "Battle Area HTML5",
+    "id": "super-bounce-ball-maze",
+    "title": "Super Bounce Ball Maze",
     "description": "Intense multiplayer battle arena game with strategic combat",
-    "tags": ["multiplayer", "action", "strategy"],
+    "tags": ["single-player", "action", "strategy"],
     "status": "playable",
-    "path": "https://playground.kaballah.site/game/battle-area",
-    "icon": "⚔️",
-    "iframe": "<iframe src=\"http://www.freeonlinegames.com/embed/160243\" width=\"800\" height=\"450\" frameborder=\"no\" scrolling=\"no\"></iframe>"
+    "path": "/games/super-bounce-ball-maze.html",
+    "icon": "⚔️"
   },
   {
     "id": "chess",

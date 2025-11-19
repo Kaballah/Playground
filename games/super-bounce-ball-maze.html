@@ -1,0 +1,168 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Super Bounce Ball Maze — Playground</title>
+        <meta name="description" content="Play Super Bounce Ball Maze embedded on Playground — bounce through mazes and reach the goal." />
+        <style>
+            :root{
+                --bg:#0f1724; /* deep slate */
+                --card:#0b1220;
+                --muted:#93c5fd;
+                --accent:#7dd3fc;
+                --glass: rgba(255,255,255,0.03);
+                --radius:12px;
+                font-family: Inter,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+            }
+            html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071026);color:#e6eef8}
+            .site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto}
+            .brand{display:flex;gap:12px;align-items:center}
+            .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--muted));display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 18px rgba(3,7,18,0.6)}
+            .title{font-size:20px;font-weight:600}
+            .subtitle{font-size:12px;color:rgba(230,238,248,0.75)}
+
+            .container{max-width:1100px;margin:18px auto;padding:20px;display:grid;grid-template-columns:1fr 360px;gap:20px}
+            .play-card{background:var(--card);padding:14px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6);min-height:420px}
+            .info-card{background:linear-gradient(180deg,var(--glass),transparent);padding:16px;border-radius:12px;height:fit-content}
+
+            .embed-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:8px;overflow:hidden;background:#000}
+            #embededGame{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+            h1{margin:4px 0 8px;font-size:18px}
+            p{margin:8px 0;color:rgba(230,238,248,0.9);line-height:1.4}
+            .section{margin-top:12px}
+
+            .controls{display:grid;gap:8px}
+            .kbd{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);font-weight:600}
+
+            .similar-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+            .sim-link{display:block;padding:10px;border-radius:10px;background:rgba(13,18,28,0.4);text-decoration:none;color:var(--accent);border:1px solid rgba(125,211,252,0.06)}
+
+            .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+            .btn{background:var(--accent);color:#022;border:none;padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer;text-decoration:none}
+            .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+            footer{max-width:1100px;margin:18px auto;padding:12px;color:rgba(230,238,248,0.6);font-size:13px}
+
+            @media (max-width:940px){
+                .container{grid-template-columns:1fr;padding:12px}
+            }
+        </style>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="brand">
+                <div class="logo">PG</div>
+                <div>
+                    <div class="title">Playground</div>
+                    <div class="subtitle">Games • Quick fun • No install</div>
+                </div>
+            </div>
+            <nav>
+                <a class="btn secondary" href="../index.html" aria-label="Back to Playground index">Back to games</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="play-card">
+                <h1>Super Bounce Ball Maze</h1>
+                <div class="subtitle">Bounce your way through mazes — reach the goal!</div>
+
+                <div class="embed-wrap section">
+                    <!-- iDev.Games Responsive Embed Code for Super Bounce Ball Maze -->
+                    <iframe id="embededGame" src="https://idev.games/embed/super-bounce-ball-maze" scrolling="no" seamless="seamless" frameBorder="0">Browser not compatible.</iframe>
+                    <!-- End Embed Code -->
+                </div>
+
+                        <div class="actions">
+                            <a class="btn" href="https://idev.games/embed/super-bounce-ball-maze" target="_blank" rel="noopener">Open in new tab</a>
+                            <button class="btn secondary" id="btn-refresh">Reload iframe</button>
+                            <button class="btn" id="btn-fullscreen">Fullscreen</button>
+                        </div>
+
+                <div class="section info-card" aria-hidden="false">
+                    <strong>About this game</strong>
+                    <p>Super Bounce Ball Maze is a fast, reflex-focused maze game. Control a bouncing ball and navigate through tricky levels filled with obstacles. The goal is to reach the end of each maze while avoiding hazards and using bounce pads and walls to your advantage.</p>
+
+                    <div class="section">
+                        <strong>How to play</strong>
+                        <div class="controls">
+                            <div><span class="kbd">←</span> / <span class="kbd">→</span> — Move left / right</div>
+                            <div><span class="kbd">↑</span> or <span class="kbd">Space</span> — Jump (if available)</div>
+                            <div>Use momentum to reach higher platforms and avoid hazards. Timing is key!</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <strong>Tips</strong>
+                        <ul>
+                            <li>Watch the bounce pads — they change your jump height.</li>
+                            <li>Sometimes a short hop followed by a wall-bounce gets you further than a full jump.</li>
+                            <li>Replay levels to learn safe paths and shortcuts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="info-card">
+                <strong>Similar games</strong>
+                <div class="similar-list">
+                    <a class="sim-link" href="minimal-tower-defense.html">Minimal Tower Defense — strategy and waves</a>
+                    <a class="sim-link" href="moto-x3m.html">Moto X3M — bike platforming and stunts</a>
+                    <a class="sim-link" href="/games/some-other-game.html">More action & puzzle games</a>
+                </div>
+
+                <div class="section">
+                    <strong>Game details</strong>
+                    <p>Embed source: iDev.Games. Runs in-browser on desktop and mobile. No downloads required.</p>
+                </div>
+
+                <div class="section">
+                    <strong>Accessibility</strong>
+                    <p>If keyboard controls aren't responding, click the game area to focus. For screen readers, the game canvas is not fully accessible — refer to this page's description and tips to help play.</p>
+                </div>
+
+                <div class="section">
+                    <small>Credits: game by iDev.Games • Embedded by Playground</small>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div>© Playground — casual games collection</div>
+                <div>Tip: Use fullscreen in the player for the best experience.</div>
+            </div>
+        </footer>
+
+            <script>
+                // Minimal interactivity: Reload iframe button and focus behavior
+                document.getElementById('btn-refresh').addEventListener('click',function(){
+                    const f=document.getElementById('embededGame');
+                    const src=f.src;
+                    f.src='about:blank';
+                    setTimeout(()=>f.src=src,120);
+                });
+
+                // Fullscreen button for embed wrapper
+                document.getElementById('btn-fullscreen').addEventListener('click',function(){
+                    const wrap = document.querySelector('.embed-wrap');
+                    if (wrap.requestFullscreen) {
+                        wrap.requestFullscreen();
+                    } else if (wrap.webkitRequestFullscreen) {
+                        wrap.webkitRequestFullscreen();
+                    } else if (wrap.msRequestFullscreen) {
+                        wrap.msRequestFullscreen();
+                    } else {
+                        alert('Fullscreen not supported in this browser.');
+                    }
+                });
+
+                // Auto-focus iframe on user tap for mobile controls
+                const wrap = document.querySelector('.embed-wrap');
+                wrap.addEventListener('click',()=>document.getElementById('embededGame').focus(),{passive:true});
+            </script>
+    </body>
+</html>
